@@ -58,9 +58,9 @@ Note that this is **NOT** the `<button>` html element. This is another way to cr
     border: 0px solid black;
     border-radius:5px;
     background-color: white;
-    margin': 0 .1em;
-    font-weight': bold;
-    padding': 0.1em .5em;
+    margin: 0 .1em;
+    font-weight: bold;
+    padding: 0.1em .5em;
     color: black;
     box-shadow:1px 1px 5px 1px gray,0px 0px 4px 0px black inset;
 }
