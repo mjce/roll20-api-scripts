@@ -1,0 +1,13 @@
+{
+    "name": "Rstyle",
+    "script": "Rstyle.js",
+    "version": "0.1",
+    "previousversions": [],
+    "description": "WIP",
+    "authors": "Scott C.",
+    "roll20userid": "459831",
+    "useroptions": [],
+    "dependencies": [],
+    "modifies": {},
+    "conflicts": []
+}
