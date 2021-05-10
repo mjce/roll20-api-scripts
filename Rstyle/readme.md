@@ -74,7 +74,7 @@ These complex elements take additional arguments and allow for more complex inpu
 ### Arguments
 #### options
 The first argument for each complex element is an array of information about the current and possible states of that input. The basic format for this array is:
-```json
+```js
 [
     current,//the current value. A string, number, or boolean.
     {
@@ -106,7 +106,7 @@ position:relative,
 display:table,
 padding:0,
 border-collapse:collapse,
-line-height:'0'
+line-height:0
 ```
 Note that currently, the checkbox does not work if forced to change its size, and if creating a chat menu, it is recommended that you avoid Roll20 chat format characters (e.g. `*`), and only use a single character from the [Pictos fonts](https://wiki.roll20.net/CSS_Wizardry#Pictos) (or other symbol fonts on that wiki page). 
 #### checkboxgroup(optionSets)
@@ -147,14 +147,14 @@ display:block
 ```
 **Background**
 ```css
-'border-radius':'5px',
-border:'0px solid black',
-'box-shadow':'0px 0px 5px 0px black inset',
-width:'3em',
-height:'1em',
-display:'block',
-padding:'2px',
-overflow:'hidden'
+border-radius:5px,
+border:0px solid black,
+box-shadow:0px 0px 5px 0px black inset,
+width:3em,
+height:1em,
+display:block,
+padding:2px,
+overflow:hidden
 ```
 In addition to the keys that can be passed in the option objects for a slider, toggles can also take a `backgroundStyle` key that will control the CSS of the toggle's background when that option is active.
 ## Utility Methods
