@@ -20,7 +20,7 @@ Rstyle allows for functional insertion of many basic html elements, along with a
 Your basic html `<div>` tag.
 ```css
 {
-    overflow:hidden
+    overflow:hidden;
 }
 ```
 - h1-5(content,properties)
@@ -30,11 +30,11 @@ Your basic headers. Rstyle currently only supports 5 levels of headers
 - table(content,properties)
 ```css
 {
-    margin: 0,
-    border-collapse:collapse,
-    font-size:12px,
-    border:0px solid black,
-    width:auto
+    margin: 0;
+    border-collapse:collapse;
+    font-size:12px;
+    border:0px solid black;
+    width:auto;
 }
 ```
 - th(content,properties)
@@ -42,8 +42,8 @@ Your basic headers. Rstyle currently only supports 5 levels of headers
 - td(content,properties)
 ```css
 {
-    border:0px solid black,
-    vertical-align:middle
+    border:0px solid black;
+    vertical-align:middle;
 }
 ```
 - pre(content,properties)
@@ -55,14 +55,14 @@ Your basic anchor tag. Note that `href` is put into `properties`. Useful for web
 Note that this is **NOT** the `<button>` html element. This is another way to create an anchor tag as above, but it uses different default CSS that creates nicer looking chat buttons than the big pink Roll20 default for command buttons.
 ```css
 {
-    border: 0px solid black,
-    border-radius:5px,
-    background-color: white,
-    margin': 0 .1em,
-    font-weight': bold,
-    padding': 0.1em .5em,
-    color: black,
-    box-shadow:1px 1px 5px 1px gray,0px 0px 4px 0px black inset
+    border: 0px solid black;
+    border-radius:5px;
+    background-color: white;
+    margin': 0 .1em;
+    font-weight': bold;
+    padding': 0.1em .5em;
+    color: black;
+    box-shadow:1px 1px 5px 1px gray,0px 0px 4px 0px black inset;
 }
 ```
 - input(content,properties)
@@ -94,19 +94,19 @@ Some complex inputs will have additional required or optional keys for the `opti
 #### checkbox(options)
 The checkbox replicates the basic styling of an `<input type="checkbox">`. The default CSS for a checkbox is:
 ```css
-border:1px solid black,
-box-shadow:0px 0px 4px 0px black inset,
-font-style:pictos,
-width:10px,
-height:10px,
-background-color:white,
-overflow:visible,
-border-radius:1px,
-position:relative,
-display:table,
-padding:0,
-border-collapse:collapse,
-line-height:0
+border:1px solid black;
+box-shadow:0px 0px 4px 0px black inset;
+font-style:pictos;
+width:10px;
+height:10px;
+background-color:white;
+overflow:visible;
+border-radius:1px;
+position:relative;
+display:table;
+padding:0;
+border-collapse:collapse;
+line-height:0;
 ```
 Note that currently, the checkbox does not work if forced to change its size, and if creating a chat menu, it is recommended that you avoid Roll20 chat format characters (e.g. `*`), and only use a single character from the [Pictos fonts](https://wiki.roll20.net/CSS_Wizardry#Pictos) (or other symbol fonts on that wiki page). 
 #### checkboxgroup(optionSets)
@@ -118,18 +118,18 @@ A slider functions similarly to an `<input type="radio">` set, but is contained 
 
 **Background CSS**
 ```css
-background-color:black,
-border-radius:5px,
-display:inline-block,
-box-shadow:1px 1px 5px 1px gray
+background-color:black;
+border-radius:5px;
+display:inline-block;
+box-shadow:1px 1px 5px 1px gray;
 ```
 **Thumb CSS**
 ```css
-display:inline-block,
-margin:0,
-border:0px solid black,
-box-shadow:0px 0px 4px 0px black inset,
-border-radius:5px
+display:inline-block;
+margin:0;
+border:0px solid black;
+box-shadow:0px 0px 4px 0px black inset;
+border-radius:5px;
 ```
 A slider also has additional arguments and option keys that can be passed to it.
 The additional arguments are `backgroundCSS` and `thumbCSS`. These are objects with the same format as the style key of the properties object for basic HTML entities, and will adjust the default styling of the slider's background and thumb respectively, overriding the default CSS for the slider.
@@ -138,23 +138,23 @@ The additional option keys are `thumbStyle` and `active`. `thumbStyle` functions
 Takes the same arguments as a slider, but makes a toggle. This looks like a switch. The default CSS for a toggle is:
 **Thumb**
 ```css
-border-radius:5px,
-background-color:white,
-box-shadow:0px 0px 2px 0px black,0px 0px 4px 0px black inset,
-width:50%,
-height:100%,
-display:block
+border-radius:5px;
+background-color:white;
+box-shadow:0px 0px 2px 0px black,0px 0px 4px 0px black inset;
+width:50%;
+height:100%;
+display:block;
 ```
 **Background**
 ```css
-border-radius:5px,
-border:0px solid black,
-box-shadow:0px 0px 5px 0px black inset,
-width:3em,
-height:1em,
-display:block,
-padding:2px,
-overflow:hidden
+border-radius:5px;
+border:0px solid black;
+box-shadow:0px 0px 5px 0px black inset;
+width:3em;
+height:1em;
+display:block;
+padding:2px;
+overflow:hidden;
 ```
 In addition to the keys that can be passed in the option objects for a slider, toggles can also take a `backgroundStyle` key that will control the CSS of the toggle's background when that option is active.
 ## Utility Methods
