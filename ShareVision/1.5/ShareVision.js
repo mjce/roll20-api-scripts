@@ -97,11 +97,11 @@ var ShareVision = ShareVision || (function() {
 
     createVision = function(id, overdrive) {
         // get root obj
-        var master = getObj('graphic',id),
+        let master = getObj('graphic',id),
             slave = getVision(id),
             layer,dim;
-        //aura = master.get('status_aura');
-        //sendChat('', 'vision created ' + 'status_aura' + aura);
+        let aura = master.get('status_aura');
+        sendChat('', 'vision created ' + 'status_aura' + aura);
         if(!slave && master) {
             if(overdrive){
                 layer=( 'gmlayer' === master.get('layer') ? 'gmlayer' : 'objects');
@@ -115,9 +115,12 @@ var ShareVision = ShareVision || (function() {
                     height: dim,
                     width: dim,
                     controlledby: 'all',
-                    light_hassight: true,
-                    light_radius: master.get('light_radius'),
-                    light_dimradius: master.get('light_dimradius')});
+                    has_bright_light_vision: master.get('has_bright_light_vision'),
+                    has_night_vision: master.get('has_night_vision'),
+                    night_vision_distance: master.get('night_vision_distance'),
+                    night_vision_effect: master.get('night_vision_effect')
+                    
+                });
         
                 if('gmlayer' === layer || 'objects' === layer) {
                     toBack(master);
@@ -136,7 +139,8 @@ var ShareVision = ShareVision || (function() {
                     height: dim,
                     width: dim,
                     controlledby: 'all',
-                    light_hassight: true});
+                    has_bright_light_vision: master.get('has_bright_light_vision')
+                });
         
                 if('gmlayer' === layer || 'objects' === layer) {
                     toBack(master);
@@ -157,7 +161,7 @@ var ShareVision = ShareVision || (function() {
     },
 
     removeVision = function(id) {
-        var pair=getVisionPair(id);
+        let pair=getVisionPair(id);
         if(pair) {
             if(id === pair.master.id ) {
                 pair.slave.remove();
@@ -168,7 +172,7 @@ var ShareVision = ShareVision || (function() {
 
 
     shareVisionToken = function(id) {
-        var pair=getVisionPair(id);
+        let pair=getVisionPair(id);
         if(pair) {
             removeVision(id);
         } else {
@@ -182,7 +186,7 @@ var ShareVision = ShareVision || (function() {
     },
     
     markerState = function(obj,prev){
-        var aura = obj.get('status_aura'),
+        let aura = obj.get('status_aura'),
             overdrive = obj.get('status_overdrive'),
             pAura = prev.statusmarkers.indexOf('aura')>-1,
             pOverdrive = prev.statusmarkers.indexOf('overdrive')>-1;
@@ -198,7 +202,7 @@ var ShareVision = ShareVision || (function() {
     },
     
     handleTokenChange = function(obj,prev) {
-        var pair = getVisionPair(obj.id),
+        let pair = getVisionPair(obj.id),
         layer,
         dim;
             if(pair) {
